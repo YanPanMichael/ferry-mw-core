@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [chan-log](https://github.com/conventional-changelog/chan-log) for commit guidelines.
 
+### [0.0.4](https://github.com/YanPanMichael/ferry-mw-core/compare/v0.0.3...v0.0.4) (2022-05-22)
+
 ### 0.0.3 (2022-05-22)
 
 
