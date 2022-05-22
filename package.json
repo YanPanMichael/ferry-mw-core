@@ -1,6 +1,6 @@
 {
   "name": "@ferry-middleware/ferry-mw-core",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "HTTP middleware core service for FerryJS",
   "main": "dist/bundle.cjs.min.js",
   "module": "dist/bundle.esm.min.js",

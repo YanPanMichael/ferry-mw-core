@@ -1,7 +1,7 @@
 /*!
-* @ferry-middleware/ferry-mw-core with v0.0.4
+* @ferry-middleware/ferry-mw-core with v0.0.5
 * Author: yanpan
-* Built on 2022-05-22, 13:50:05
+* Built on 2022-05-22, 13:52:24
 * Released under the MIT License Copyright (c) 2022
 */
 (function(g,f){typeof exports==='object'&&typeof module!=='undefined'?module.exports=f():typeof define==='function'&&define.amd?define(f):(g=typeof globalThis!=='undefined'?globalThis:g||self,g["ferry-mw-core"]=f());})(this,(function(){'use strict';/**
@@ -139,5 +139,5 @@ var HttpMiddlewareService = /** @class */ (function () {
     return HttpMiddlewareService;
 }());var index = {
     Service: HttpMiddlewareService,
-    version: '0.0.4',
+    version: '0.0.5',
 };return index;}));

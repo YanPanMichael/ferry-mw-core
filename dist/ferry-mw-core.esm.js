@@ -1,7 +1,7 @@
 /*!
-* @ferry-middleware/ferry-mw-core with v0.0.4
+* @ferry-middleware/ferry-mw-core with v0.0.5
 * Author: yanpan
-* Built on 2022-05-22, 13:50:05
+* Built on 2022-05-22, 13:52:24
 * Released under the MIT License Copyright (c) 2022
 */
 /**
@@ -141,7 +141,7 @@ var HttpMiddlewareService = /** @class */ (function () {
 
 var index = {
     Service: HttpMiddlewareService,
-    version: '0.0.4',
+    version: '0.0.5',
 };
 
 export { index as default };
