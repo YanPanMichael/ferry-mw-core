@@ -1,6 +1,6 @@
-# template-seed-ts-module
+# @ferry-middleware/ferry-mw-core
 
-> By.
+> By YanPan
 
 ## 简介
 

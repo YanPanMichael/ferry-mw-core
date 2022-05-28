@@ -9,6 +9,7 @@ module.exports = ({ pkg } = {}) => {
     output: {
       // 目录
       directory: 'dist',
+      name: 'mwcore',
       // 格式
       format: ['cjs', 'es', 'umd'],
     },
