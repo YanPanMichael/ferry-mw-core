@@ -1,6 +1,6 @@
 /**
  * @property {Array} middlewares stack
- * @property {BFetchInstance} http
+ * @property {FerryInstance} http
  * @property {Function} originalAdapter
  */
  export default class HttpMiddlewareService {
@@ -9,26 +9,26 @@
   originalAdapter: any;
   chain: any[];
   /**
-   * @param {BFetchInstance} [bfetch]
+   * @param {FerryInstance} [ferry]
    */
-  constructor(bfetch) {
+  constructor(ferry) {
       this.middlewares = [];
 
       this._updateChain();
-      this.setHttp(bfetch);
+      this.setHttp(ferry);
   }
 
   /**
-   * @param {BFetchInstance} bfetch
+   * @param {FerryInstance} ferry
    * @returns {HttpMiddlewareService}
    */
-  setHttp(bfetch) {
+  setHttp(ferry) {
       this.unsetHttp();
 
-      if (bfetch) {
-          this.http = bfetch;
-          this.originalAdapter = bfetch.defaults.adapter;
-          bfetch.defaults.adapter = config => this.adapter(config);
+      if (ferry) {
+          this.http = ferry;
+          this.originalAdapter = ferry.defaults.adapter;
+          ferry.defaults.adapter = config => this.adapter(config);
       }
       return this;
   }

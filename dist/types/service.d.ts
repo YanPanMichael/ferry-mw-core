@@ -1,6 +1,6 @@
 /**
  * @property {Array} middlewares stack
- * @property {BFetchInstance} http
+ * @property {FerryInstance} http
  * @property {Function} originalAdapter
  */
 export default class HttpMiddlewareService {
@@ -9,14 +9,14 @@ export default class HttpMiddlewareService {
     originalAdapter: any;
     chain: any[];
     /**
-     * @param {BFetchInstance} [bfetch]
+     * @param {FerryInstance} [ferry]
      */
-    constructor(bfetch: any);
+    constructor(ferry: any);
     /**
-     * @param {BFetchInstance} bfetch
+     * @param {FerryInstance} ferry
      * @returns {HttpMiddlewareService}
      */
-    setHttp(bfetch: any): this;
+    setHttp(ferry: any): this;
     /**
      * @returns {HttpMiddlewareService}
      */
