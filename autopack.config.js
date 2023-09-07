@@ -1,5 +1,5 @@
 /**
- * struk
+ * autopack
  */
 module.exports = ({ pkg } = {}) => {
   return {

@@ -30,14 +30,15 @@
   "scripts": {
     "test": "cross-env BABEL_ENV=test NODE_ENV=testing jest --coverage",
     "test:watch": "jest --watch",
-    "build": "cross-env NODE_ENV=production struk build --source=ts",
-    "lint": "eslint . --ext .ts",
-    "fix": "eslint . --fix",
-    "format": "prettier --write .",
     "release": "qkrelease",
     "changelog:help": "conventional-changelog --help",
     "changelog": "conventional-changelog -p simple -i CHANGELOG.md -s -r 0",
-    "docs": "docsify serve ./docs"
+    "docs": "docsify serve ./docs",
+    "build": "cross-env NODE_ENV=production cpack build --source=ts",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,mdx}\"",
+    "prepare": "husky install",
+    "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
   },
   "license": "MIT",
   "devDependencies": {
@@ -48,29 +49,37 @@
     "@types/node": "~16.11",
     "@typescript-eslint/eslint-plugin": "~5.14",
     "@typescript-eslint/parser": "~5.14",
-    "axios": "^0.27.2",
+    "axios": "^1.4.0",
     "axios-mock-adapter": "^1.20.0",
     "babel-jest": "^27.3.0",
     "conventional-changelog-cli": "^2.1.1",
     "cross-env": "5.2.0",
     "docsify-cli": "^4.4.4",
+    "jest": "~27.5",
+    "qk-release": "latest",
+    "@autopack/cpack": "latest",
+    "ts-jest": "^27.1.4",
+    "validate-commit-msg": "^2.14.0",
     "eslint": "~8.11",
     "eslint-config-prettier": "~8.5",
-    "eslint-plugin-jest": "^26.1.5",
-    "husky": "^4.3.8",
-    "jest": "~27.5",
-    "qk-release": "^1.1.2",
-    "struk": "^1.1.0",
-    "ts-jest": "^27.1.4",
-    "validate-commit-msg": "^2.14.0"
+    "eslint-plugin-jest": "^26.9.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "husky": "^8.0.3",
+    "json": "11.0.0",
+    "lint-staged": "13.2.3",
+    "lit": "^2.8.0",
+    "prettier": "3.0.1"
   },
   "peerDependencies": {
-    "axios": ">= 0.19.1"
+    "axios": ">= 1.4.0"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "config": {
     "commitizen": {
@@ -80,5 +89,10 @@
   "changelogConfig": {
     "authorName": true,
     "authorEmail": true
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,css,md}": [
+      "prettier -w"
+    ]
   }
 }
